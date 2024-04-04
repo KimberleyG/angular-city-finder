@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { VilleApiModel } from '../geo-api.service';
 import { MatTableDataSource } from '@angular/material/table';
 
+/** page permettant d'afficher les villes d'un département */
 @Component({
   selector: 'liste-villes-page',
   templateUrl: './liste-villes-page.component.html',

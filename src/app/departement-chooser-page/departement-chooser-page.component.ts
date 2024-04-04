@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Observable, ReplaySubject, debounceTime, distinctUntilChanged, of, startWith, switchMap, takeUntil } from 'rxjs';
 import { DepartementApiModel, GeoApiService, RegionApiModel } from '../geo-api.service';
 
-
+/** page permettant de trouver une région par autocomplétion, et d'en afficher les départements  */
 @Component({
   selector: 'app-departement-chooser-page',
   templateUrl: './departement-chooser-page.component.html',
