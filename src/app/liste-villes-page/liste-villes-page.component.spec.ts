@@ -31,7 +31,11 @@ describe('ListeVillesPageComponent', () => {
                   "02300"
                 ],
                 "population": 507
-              }]
+              }],
+              infoDept: {
+                "nom": 'Normandie',
+                "code": "28"
+              }
             }),
           }
         }
