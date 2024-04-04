@@ -1,25 +1,23 @@
-<div class="dc-main">
-  <mat-form-field class="example-full-width">
-    <mat-label>Région</mat-label>
-    <input type="text" placeholder="Nom de la région" aria-label="Région" matInput [formControl]="regionInput"
-      [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"
-      (optionSelected)="onRegionSelected($event.option.value)">
-      @for (option of filteredOptions; track option) {
-      <mat-option [value]="option">{{option.nom}}</mat-option>
-      }
-    </mat-autocomplete>
-  </mat-form-field>
+<mat-form-field class="example-full-width">
+  <mat-label>Région</mat-label>
+  <input type="text" placeholder="Nom de la région" aria-label="Région" matInput [formControl]="regionInput"
+    [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"
+    (optionSelected)="onRegionSelected($event.option.value)">
+    @for (option of filteredOptions; track option) {
+    <mat-option [value]="option">{{option.nom}}</mat-option>
+    }
+  </mat-autocomplete>
+</mat-form-field>
 
 
-  <br />
-  <br />
-  <ng-container *ngIf="regionSelected">
-    Liste des départements de la région {{regionSelected.nom}}
-    <mat-nav-list>
-      @for (dep of listeDepartements; track dep) {
-      <a mat-list-item [routerLink]="['/departement', dep.code]">{{ dep.nom }} ({{dep.code}}) </a>
-      }
-    </mat-nav-list>
-  </ng-container>
-</div>
+<br />
+<br />
+<ng-container *ngIf="regionSelected">
+  <h2>Liste des départements de la région {{regionSelected.nom}}</h2>
+  <mat-nav-list>
+    @for (dep of listeDepartements; track dep) {
+    <a mat-list-item [routerLink]="['/departement', dep.code]">{{ dep.nom }} ({{dep.code}}) </a>
+    }
+  </mat-nav-list>
+</ng-container>
