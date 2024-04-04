@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VilleApiModel } from '../geo-api.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 /** page permettant d'afficher les villes d'un département */
 @Component({
@@ -9,11 +10,13 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './liste-villes-page.component.html',
   styleUrls: ['./liste-villes-page.component.css']
 })
-export class ListeVillesPageComponent implements OnInit {
+export class ListeVillesPageComponent implements OnInit, AfterViewInit {
 
   dataSource = new MatTableDataSource<VilleApiModel>([]);
 
   displayedColumns: string[] = ['nom', 'population'];
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -23,4 +26,7 @@ export class ListeVillesPageComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 }

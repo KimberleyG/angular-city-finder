@@ -3,6 +3,8 @@ import { ListeVillesPageComponent } from './liste-villes-page.component';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ListeVillesPageComponent', () => {
   let component: ListeVillesPageComponent;
@@ -12,7 +14,7 @@ describe('ListeVillesPageComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [ListeVillesPageComponent],
-      imports: [MatTableModule,],
+      imports: [BrowserAnimationsModule, MatTableModule, MatPaginatorModule],
       providers: [
         {
           provide: ActivatedRoute,
