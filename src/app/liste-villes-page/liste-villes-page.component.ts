@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { VilleApiModel } from '../service/geo-api.service';
+import { DepartementApiModel, VilleApiModel } from '../service/geo-api.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 
@@ -16,13 +16,16 @@ export class ListeVillesPageComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['nom', 'population'];
 
+  infoDept!: DepartementApiModel;
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.data.subscribe((routeData) => {
-      this.dataSource.data = routeData['pageData'];
+      this.dataSource.data = routeData['listeVilles'];
+      this.infoDept = routeData['infoDept'];
     });
   }
 

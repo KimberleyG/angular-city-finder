@@ -20,7 +20,7 @@ describe('ListeVillesPageComponent', () => {
           provide: ActivatedRoute,
           useValue: {
             data: of({
-              pageData: [{
+              listeVilles: [{
                 "nom": "Abbécourt",
                 "code": "02001",
                 "codeDepartement": "02",
