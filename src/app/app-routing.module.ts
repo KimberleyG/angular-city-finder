@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { RegionListComponent } from './region-list/region-list.component';
+import { ListeVillesPageComponent } from './liste-villes-page/liste-villes-page.component';
+import { DepartementChooserPageComponent } from './departement-chooser-page/departement-chooser-page.component';
+import { cityResolver } from './city.resolver';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'region', component: RegionListComponent }
+  { path: '', component: DepartementChooserPageComponent },
+  {
+    path: 'departement/:code', component: ListeVillesPageComponent, resolve: {
+      pageData: cityResolver
+    }
+  }
 ];
 
 @NgModule({
