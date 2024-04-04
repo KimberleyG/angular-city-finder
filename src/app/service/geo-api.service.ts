@@ -52,6 +52,11 @@ export class GeoApiService {
     return this.http.get<DepartementApiModel[]>(`https://geo.api.gouv.fr/regions/${regionCode}/departements`);
   }
 
+  /** permet de récupérer les informations d'un département par son code */
+  getDepartementByCode(deptCode: string): Observable<DepartementApiModel> {
+    return this.http.get<DepartementApiModel>(`https://geo.api.gouv.fr/departements/${deptCode}`);
+  }
+
   /** permet de récuperer la liste des communes associées et déléguées d'un département 
    * @param deptCode code du département
    * @return liste des villes du département

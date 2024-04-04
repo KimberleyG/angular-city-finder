@@ -7,7 +7,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GeoApiService } from '../geo-api.service';
+import { GeoApiService } from '../service/geo-api.service';
 import { of } from 'rxjs';
 
 describe('DepartementChooserPageComponent', () => {
