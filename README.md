@@ -2,17 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
-# Demande
+# Contenu
 
-Tu devras réaliser une application Angular comportant :
+Application Angular comportant :
 
 - un premier composant / page permettant d’effectuer une recherche sur une région via un formulaire.
 
 - un second composant / page permettant d'afficher la liste des communes d'un département.
-
-- Au moins un test unitaire devra être écrit.
-
-Le code produit devra être publié sur un repo github ou un équivalent.
 
 
 ## Premier composant :
