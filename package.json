@@ -1,5 +1,5 @@
 {
-  "name": "key-city-finder",
+  "name": "angular-city-listing",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
